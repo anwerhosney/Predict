@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prediction Result</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <center>
+        <div class='cont'>
+            {% if data['prediction'] > 0.50 %}
+            <h1>I think it's a dog</h1>
+            {% else %}
+            <h1>It looks like a cat</h1>
+            {% endif %}
+        </div>
+
+        <!-- <h1 class="data_h1">Accuracy:<br>Cat: <span class="span">{{ data['prediction'] }}</span><br></h1> -->
+
+        <!-- Render the image -->
+        <img src="data:image/jpeg;base64,{{ data['image'] }}" alt="Uploaded Image">
+
+        <br><br>
+        <button class="go_back"><a href="/" class='btn'>Go Back</a></button>
+    </center>
+</body>
+</html>
